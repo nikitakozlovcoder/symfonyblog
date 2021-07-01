@@ -11,15 +11,18 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Body</th>
+                <th>Created_at</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for post in posts %}
             <tr>
+
                 <td>{{ post.id }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
+                <td>{{ post.getCreatedAt().format('Y-m-d H:i:s') }}</td>
                 <td>
                     <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
                     <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
